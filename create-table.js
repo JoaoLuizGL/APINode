@@ -1,7 +1,6 @@
 import { sql } from "./db.js";
 
-//sql`DROP TABLE IF EXISTS videos`.then(() => console.log('Tabela apagada.'))
-
+//Criação da tabela para armazenamento dos registros
 sql`
 CREATE TABLE videos (
     id TEXT PRIMARY KEY,
