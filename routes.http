@@ -1,3 +1,4 @@
+//URLs das rotas para acesso ao banco de dados
 POST http://localhost:3333/videos
 Content-Type: application/json
 
