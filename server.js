@@ -1,11 +1,10 @@
 import { fastify } from "fastify";
-//import { DataBaseMemory } from "./database-memory.js";
 import { DataBasePostgres } from "./database-postgres.js";
 
 const server = fastify();
-// const database = new DataBaseMemory();
 const database = new DataBasePostgres()
 
+//Criação da rota criar novos registros
 server.post('/videos', async (request, reply) => {
     
     const {title,description,duration} = request.body
@@ -21,7 +20,7 @@ server.post('/videos', async (request, reply) => {
     return reply.status(201).send()
 })
 
-
+//Criação da rota para busca de registros
 server.get('/videos', async (request) => {
     const search = request.query.search
     const videos = await database.list(search)
@@ -30,7 +29,7 @@ server.get('/videos', async (request) => {
 })
 
 
-
+//Criação da rota para atualização de registros
 server.put('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
     const {title,description,duration} = request.body
@@ -44,6 +43,7 @@ server.put('/videos/:id', async (request, reply) => {
     return reply.status(204).send()
 })
 
+//Criação da rota para exclusão de registros
 server.delete('/videos/:id', async (request, reply) => {
     const videoId = request.params.id
     
