@@ -1,4 +1,4 @@
-POST http://localhost:3333/videos
+POST https://apinode-ubm8.onrender.com/videos
 Content-Type: application/json
 
 {
@@ -9,11 +9,11 @@ Content-Type: application/json
 
 ###
 
-GET  http://localhost:3333/videos?search=node
+GET  https://apinode-ubm8.onrender.com/videos
 
 ###
 
-PUT http://localhost:3333/videos/id
+PUT https://apinode-ubm8.onrender.com/videos/id
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3333/videos/id
+DELETE https://apinode-ubm8.onrender.com/videos/id
